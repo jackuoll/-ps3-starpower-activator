@@ -2,6 +2,8 @@
 
 This program listens to your guitar input and simulates pressing a key on your keyboard when you tilt the guitar. Although I'd prefer you compile and run it yourself, I published an executable version [here](https://drive.google.com/file/d/1kpMWko2No_Ij9fT4Y6CQ-tISG5UoWpcT/view?usp=sharing) that you can download.
 
+This won't work with Linux since it is using the Windows API for a bunch of things, I may update it to work with Linux at some point but odds are slim.
+
 ## Instructions for Clone Hero
 
 1. First, configure the script with whatever key you want it to push when you tilt the guitar. The default is 's', so if you're fine with that, you don't need to change it. If not, you must change `static uint StarPowerKey = 0x53;` to the [valid keycode](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
