@@ -2,7 +2,32 @@
 
 This program listens to your guitar input and simulates pressing a key on your keyboard when you tilt the guitar. Although I'd prefer you compile and run it yourself, I published an executable version [here](https://drive.google.com/file/d/1kpMWko2No_Ij9fT4Y6CQ-tISG5UoWpcT/view?usp=sharing) that you can download.
 
-This won't work with Linux since it is using the Windows API for a bunch of things, I may update it to work with Linux at some point but odds are slim.
+This won't work with Linux since it is using the Windows API for a bunch of things, I may update it to work with Linux at some point but odds are slim. It could be pretty easily re-written in Python using PyUSB, here is a snippet of python code reading the tilt:
+
+```python
+import usb.core
+import usb.backend.libusb1
+
+
+REDOCTANE_PS3_GUITAR = 0x12ba, 0x0100
+usb.backend.libusb1.get_backend(find_library=lambda _: "./libusb-1.0.dll")  # note you need libusb
+dev = usb.core.find(idVendor=REDOCTANE_PS3_GUITAR[0], idProduct=REDOCTANE_PS3_GUITAR[1])
+was_tilted = False
+
+while True:
+    try:
+        res = dev.read(0x81, 28, 100)
+    except usb.core.USBError as e:
+        if e.errno == 19:
+            self.connection_lost.emit()
+            print("Connection to USB device lost.")
+            break
+        raise
+    
+    is_tilted = res[20] == 2 and res[22] == 2 and res[24] == 2
+    if is_tiled and not was_tilted:
+        pass  # send a key input
+```
 
 ## Instructions for Clone Hero
 
