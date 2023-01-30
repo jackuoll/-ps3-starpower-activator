@@ -1,4 +1,4 @@
-# PS3 guitar controller starpower activator for PC
+# PS3 guitar controller starpower activator for Windows
 
 This program listens to your guitar input and simulates pressing a key on your keyboard when you tilt the guitar. Although I'd prefer you compile and run it yourself, I published an executable version [here](https://drive.google.com/file/d/1kpMWko2No_Ij9fT4Y6CQ-tISG5UoWpcT/view?usp=sharing) that you can download.
 
