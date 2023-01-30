@@ -12,5 +12,4 @@ This program listens to your guitar input and simulates pressing a key on your k
 
 * I threw this together in about an hour and obviously I don't have a plethora of GH hardware to test it with. I tested it with my own PS3 WT wireless guitars.
 * I do not know if this is the same way the official GH games recognise tilt and don't really care to spend time figuring out the best way to detect tilt. Take it or leave it. There's some notes in the script itself you can use to debug if you care to.
-* I don't really care to develop this any more unless maybe you have a really cool idea.
-* If it doesn't work, no I'm not going to support it unless it personally affects my gameplay.
+* There may be issues with it I find while playing so this will probably see some updates. So far the tilt seems good most the time, but occasionally it will be difficult to activate, or other times get stuck on activation.
