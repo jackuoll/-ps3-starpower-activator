@@ -25,8 +25,9 @@ while True:
         raise
     
     is_tilted = res[20] == 2 and res[22] == 2 and res[24] == 2
-    if is_tiled and not was_tilted:
+    if is_tilted and not was_tilted:
         pass  # send a key input
+    was_tilted = is_tilted
 ```
 
 ## Instructions for Clone Hero
